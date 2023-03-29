@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Criar cadastro</title>
     <link rel="stylesheet" href="formulario.css">
     <style>
                 /* Todos os elementos da página */
@@ -143,36 +143,36 @@
         </div>
 
         <!-- Início do formulário -->
-        <form>
+        <form action="#" th:action="@{/}" th:object="${user}" method="post">
 
             <fieldset class="grupo">
                 <!-- Campo do nome com legenda "nome" e css de classe "campo" -->
                 <div class="campo">
                     <label for="nome"><strong>Nome</strong></label>
-                    <input type="text" name="nome" id="nome" required>
+                    <input type="text" name="nome" id="nome" required th:field="*{name}">
                 </div>
 
                 <!-- Campo do sobrenome com legenda "sobrenome" e css de classe "campo" -->
                 <div class="campo">
                     <label for="sobrenome"><strong>Sobrenome</strong></label>
-                    <input type="text" name="sobrenome" id="sobrenome" required>
+                    <input type="text" name="sobrenome" id="sobrenome" required th:field="*{postname}">
                 </div>
             </fieldset> 
 
             <!-- Campo de email com-->
             <div class="campo">
                 <label for="email"><strong>Email</strong></label>
-                <input type="email" name="email" id="email" required>
+                <input type="email" name="email" id="email" required th:field="*{email}">
             </div>
 
             <!-- Campo de desenvolvimento web com 3 opções de botões selecionáveis (radio button) e css de classe "campo" -->
             <div class="campo">
                 <label><strong>De qual lado da aplicação você desenvolve?</strong></label>
                 <label>
-                    <input type="radio" name="devweb" value="frontend" checked>Masculino
+                    <input type="radio" name="devweb" value="frontend" checked>Front-end
                 </label>
                 <label>
-                    <input type="radio" name="devweb" value="backend">Feminio
+                    <input type="radio" name="devweb" value="backend">Back-end
                 </label>
                 <label>
                     <input type="radio" name="devweb" value="fullstack">Outros
